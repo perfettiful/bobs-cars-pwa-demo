@@ -1,0 +1,13 @@
+{{#if firstName}}
+<div class="personalizedContainer">
+    <h2>Welcome {{firstName}}!</h2>
+</div>
+{{else}}
+<div class="signupContainer">
+    <form class="personal-form">
+        <label for="firstName">Enter Name to Personalize Site!</label>
+        <input type="text" id="firstName">
+        <button type="submit">Send</button>
+    </form>
+</div>
+{{/if}}

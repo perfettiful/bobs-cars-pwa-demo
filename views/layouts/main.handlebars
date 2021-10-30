@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Bob's Dealership</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="manifest" href="/manifest.webmanifest" />
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div style="float:right; max-size:300px">
+				<p>Choose Theme:</p>
+				<div class="themeChange" data-color="blue" style="background-color:blue; ">
+				</div>
+				<div class="themeChange" data-color="purple" style="background-color:purple;">
+				</div>
+				<div class="themeChange" data-color="red" style="background-color:red; ">
+				</div>
+			</div>
+			<div>
+				<h1><a href="/">Bob's Dealership</a></h1>
+				<!-- <h3>&nbsp; &nbsp; &#9733; <a href="/specialdeal">Special Deals for Personalized Users!</a></h3>
+				-->
+			</div>
+
+		</div>
+	</header>
+	<main>
+		{{{ body }}}
+	</main>
+	<div class="lowerContainer" style="text-align:center">
+		&copy;2021 <a href="/">Bobs Dealership</a>
+	</div>
+	<!-- todo switch to dist -->
+	<script src="/js/client.js"></script>
+	{{{themeChange color }}}
+
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js')
+					.then((reg) => {
+						console.log('We found your service worker file!', reg);
+					});
+			});
+		}
+	</script>
+
+</body>
+
+</html>

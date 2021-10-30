@@ -1,0 +1,20 @@
+<div style="padding:20px">
+	<h2>{{ firstName }}'s Special Deal Price: ${{carsForSale.price}}</h2>
+	<h2><b>{{carsForSale.year}} {{carsForSale.make}} {{carsForSale.model}}</b></h2>
+	<button>Buy this {{carsForSale.model}}</button>
+	<br><br>
+	<div style="float:left">
+		{{#if carsForSale.image}}
+		<img src="/images/{{carsForSale.image}}" style="width:400px">
+		{{else}}
+		<h3>IMAGE NOT AVAILABLE</h3>
+		{{/if}}
+	</div>
+	<div style="float:left">
+		<h1 style="color:red; font-weight:bold">
+			{{#if carsForSale.sold}}
+			Sorry {{firstName}} SOLD!
+			{{/if}}
+		</h1>
+	</div>
+</div>

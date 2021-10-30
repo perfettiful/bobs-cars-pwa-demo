@@ -1,0 +1,14 @@
+<div class="car" style="display: block; border:5px solid red">
+    {{#if image}}
+    <img src="/images/{{image}}" style="width:100px;"><br>
+    {{else}}
+    <h3>IMAGE NOT AVAILABLE</h3>
+    {{/if}}
+    <h2><b>{{year}} {{make}} {{model}}</b></h2>
+    <h3>Price: ${{price}}</h3>
+    {{#if firstName}}
+    {{{carLink model firstName }}}
+    {{else}}
+    {{{carLink model "See This Car!"}}}
+    {{/if}}
+</div>
